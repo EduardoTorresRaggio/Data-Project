@@ -22,4 +22,6 @@ services:
     
     restart: unless-stopped
 
-  
+  sql:
+    container_name: sql_container
+    image: 

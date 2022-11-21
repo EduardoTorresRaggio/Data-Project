@@ -1,11 +1,8 @@
-FROM python:3.9.12
-
-
-COPY ./requirements.txt /app/
-COPY ./main.py /app/
-
-WORKDIR /app/
-
-RUN pip install -r requirements.txt
-
-CMD [ "python3", "main.py" ]
+FROM microsoft/mssql-server-linux
+COPY ./Create_database.sql .
+COPY ./start.sh .
+COPY ./entrypoint.sh .
+ENV ACCEPT_EULA=Y
+ENV SA_PASSWORD=Your!Passw0rd
+RUN chmod +x ./start.sh
+CMD /bin/bash ./entrypoint.sh
