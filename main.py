@@ -17,7 +17,7 @@ with open('colegios.csv', 'a', newline='') as csvfile:
   spamwriter = csv.writer(csvfile)
   spamwriter.writerow(respuesta)
 
-
+# https://dockertips.com/crear-im%C3%A1gen-sql-server-para-docker-personalizada
 '''
 URL1 = 'https://valencia.opendatasoft.com/explore/dataset/barris-barrios/download/?format=json&timezone=Europe/Berlin&lang=es'
 
@@ -27,7 +27,8 @@ with open('barrios.geojson', 'w', newline='') as f:
   spamwriter = geojson.dump(f)
   spamwriter.writerow(respuesta1)
 '''
-#hola
+#COMO CREAR UNA IMAGEN DE SQL DOCKER
+#https://dockertips.com/crear-im%C3%A1gen-sql-server-para-docker-personalizada
 
 #CONEXION A POSTGREESQL
 conn = psycopg2.connect(
