@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+  db:
+    container_name: postgres_container
+    image: postgres
+    restart: always
+    command: tail -F anything
+    environment:
+      POSTGRES_DB: test
+      POSTGRES_USER: edutorrag.et@gmail.com
+      POSTGRES_PASSWORD: Welcome01
+    ports:
+      - "5432:5432"
+    volumes:
+      - volumen1:/var/lib/postgesql/data
+
+  pgadmin:
+    container_name: pgadmin_container
+    image: dpage/pgadmin4
+    command: tail -F anything
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: edutorrag.et@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: Osasuna99
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+  
+volumes:
+  volumen1:
